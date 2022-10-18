@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx 
+  labels:
+    nginx: log4shell 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      nginx: log4shell 
+  template:
+    metadata:
+      labels:
+        nginx: log4shell
+    spec:
+      containers:
+      - name: nginx
+        image: teamnautilus/nginx
+        command: ["tail", "-f", "/dev/null"]
+        ports:
+        - containerPort: 8000

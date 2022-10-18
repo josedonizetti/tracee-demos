@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tracee
+  namespace: default
+data:
+  tracee.yaml: |
+    listen_addr: 3366
+    metrics: false
+    healthz: false
+    pprof: false
+    debug: false
+    format: json
+    collect:
+      capture:
+        file_write: false
+        module_load: true
+        dropped_binary: true # not working yet
+      container_enrichment: true
+      cache:
+        type: mem 
+        size: 1024
+      perf_buffer_size: 1024
+      blob_perf_buffer_size: 1024
+      output:
+        - detect-syscall 
+        - parse-arguments
+      events:
+        - close

@@ -1,0 +1,1 @@
+cmd_/home/josedonizetti/code/sessionsk8s-tracee/diamorphine/Diamorphine/diamorphine.mod := { echo  /home/josedonizetti/code/sessionsk8s-tracee/diamorphine/Diamorphine/diamorphine.o;  echo; } > /home/josedonizetti/code/sessionsk8s-tracee/diamorphine/Diamorphine/diamorphine.mod

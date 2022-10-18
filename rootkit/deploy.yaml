@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: diamorphine 
+  labels:
+    app: diamorphine 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: diamorphine 
+  template:
+    metadata:
+      labels:
+        app: diamorphine
+    spec:
+      containers:
+      - name: app
+        image: josedonizetti/diamorphine:latest
+        command: ["tail", "-f", "/dev/null"]
+        securityContext:
+          privileged: true

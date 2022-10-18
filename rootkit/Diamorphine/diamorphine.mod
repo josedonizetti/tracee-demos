@@ -1,0 +1,2 @@
+/home/josedonizetti/code/sessionsk8s-tracee/diamorphine/Diamorphine/diamorphine.o
+

@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tracee
+  namespace: default
+data:
+  tracee.yaml: |
+    listen_addr: 3366
+    metrics: false
+    healthz: false
+    pprof: false
+    debug: false
+    format: gob
+    collect:
+      capture:
+        file_write: false
+        module_load: true
+        dropped_binary: true # not working yet
+      container_enrichment: true
+      cache:
+        type: mem 
+        size: 1024
+      perf_buffer_size: 1024
+      blob_perf_buffer_size: 1024
+      output:
+        - detect-syscall 
+        - parse-arguments
+    rules:
+      rego:
+        partial_eval: false
+        aio: false
+        runtime_target: rego
+      buffer_size: 1000
+      signatures:
+        - TRC-1
+        - TRC-2    
+        - TRC-3  
+        - TRC-4      
+        - TRC-5     
+        - TRC-6   
+        - TRC-7 
+        - TRC-9
+        - TRC-10 
+        - TRC-11
+        - TRC-12   
+        - TRC-13    
+        - TRC-14  
+        - TRC-16
+        - TRC-15
